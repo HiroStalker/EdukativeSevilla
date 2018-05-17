@@ -1,0 +1,147 @@
+body{
+	margin-left:0.5em;
+}
+
+#cabecera{
+	display:block;
+	color: #436976;
+	border-bottom:5px solid #990000;
+	text-align: center;
+}
+#cabecera h1  {
+	display: inline;
+}
+
+#botones_cabecera{
+	display:block;
+	color: #436976;
+	border-bottom:5px solid #990000;
+	text-align: center;
+}
+
+#pie{
+	border-top: 5px solid #990000;
+	text-align:center;
+	color: #436976;
+}
+
+#pie image{
+	display: block;
+}
+
+#cabecera_entrada{
+	background-color:#990000;
+	border-color: #400000;
+	color:white;
+	font-size:larger;
+	margin:0.5em;
+	padding:1em;
+}
+
+#contenido{
+	display:block;
+}
+
+#enlaces {
+	float:left;
+	width: 25%;
+}
+
+#botones_fila {
+	float:right;
+}
+
+button.pagina {
+	background:white;
+	border:0px;
+	text-decoration:underline;
+}
+
+.editar_usuario{
+	border:0px;
+	margin:0px;
+	padding:0px;
+	background:white;
+}
+
+.editar_fila{
+	border:0px;
+	margin:0px;
+	padding:0px;
+}
+
+button.fila
+{
+	background:white;
+	border:0px;
+}
+
+button.seleccionada{
+	background:white;
+	border:0px;
+	text-decoration:none;
+	font-size:larger;
+	font-weight:bolder;
+}
+
+.libro,.usuario,.prestamo,.renovacion,.devolucion,.fecha_prestamo{
+	background-color: #EEEEEE;
+    color: #436976;
+    border: 1px solid #990000;
+    clear:both;
+	padding-bottom:10px;
+}
+
+.prestamo {
+	background-color: #EEEEEE;
+    color: #436976;
+    border: 2px solid #990000;
+    clear:both;
+}
+
+.apellidos,.nombre,.dni,.codigopostal,.edad,.numerocuenta,.conflictivo,.tipocliente,.telefono,.direccion,.poblacion,.visitas,.numeroimpagos,.matricula,.marca,.modelo,.chasis,.color,.abandonado,.kms
+{
+	background-color: #EEEEEE;
+    color: #436976;
+    border: 1px solid #990000;
+}
+
+.fid,.fechainicio,.preciototal,.abonado,.fechafin
+{
+	background-color: #EEEEEE;
+    color: #436976;
+    border: 1px solid #990000;
+}
+
+.rm_id,.tipoestado,.rm,.horas
+{
+	background-color: #EEEEEE;
+    color: #436976;
+    border: 1px solid #990000;
+}
+
+.titulo{
+	display:inline;
+	font-style:oblique;
+	font-weight:bolder;
+	font-size:larger;
+}
+
+label{
+	 margin-right:0.5em;
+	 display:block;
+	 float:left;
+	 color: #436976;
+}
+
+#div_submit input{
+	margin-left:  24em;
+}
+
+/* Mensajes de Error */
+div.error {
+  color : brown;
+  border : 2px solid red;
+  padding : 10px;
+  margin: 10px;
+}
