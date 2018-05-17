@@ -10,31 +10,30 @@
 
   	<?php
 		session_start();
-		if (isset($_SESSION["formulariocliente"]) ){
+		if (isset($_SESSION["formulariousuario"]) ){
 			$formulario["NOMBRE"]=$_REQUEST["nombre"];
 			$formulario["APELLIDOS"]=$_REQUEST["apellidos"];
 			$formulario["DNI"]=$_REQUEST["dni"];
 			$formulario["DIRECCION"]=$_REQUEST["direccion"];
 			$formulario["POBLACION"]=$_REQUEST["poblacion"];
+			$formulario["NUMERODECUENTA"]=$_REQUEST["numerodecuenta"];
 			$formulario["CODIGOPOSTAL"]=$_REQUEST["codigopostal"];
 			$formulario["TELEFONO"]=$_REQUEST["telefono"];
-			$formulario["CONFLICTIVO"]=0;
-			$formulario["VISITAS"]=0;
-			$formulario["NUMEROCUENTA"]=$_REQUEST["numerocuenta"];
-			$formulario["NUMEROIMPAGOS"]=0;
-			$formulario["TIPOCLIENTE"]=$_REQUEST["tipocliente"];
-			$formulario["EDAD"]=$_REQUEST["edad"];
-			$_SESSION["formulariocliente"]=$formulario;
+			$formulario["NUMERODEIMPAGOS"]=0;
+			$formulario["TIPOUSUARIO"]=$_REQUEST["tipousuario"];
+			$formulario["MOROSIDAD"]=0;
+
+			$_SESSION["formulariousuario"]=$formulario;
 			$errores = validar($formulario);
 			if ( count ($errores) > 0 ) {
 				foreach($errores as $error){
 					$_SESSION["error"] = $error . "<br>" . $_SESSION["error"] ;
 				}
-				$_SESSION["destino"] = "clientes/formCrearCliente.php";
+				$_SESSION["destino"] = "usuarios/formCrearusuario.php";
 				Header("Location:../error.php");
 			}else
-				Header("Location:../clientes/insertarCliente.php");
-		}else Header("Location:../clientes/formCrearCliente.php");
+				Header("Location:../usuarios/insertarusuario.php");
+		}else Header("Location:../usuarios/formCrearusuario.php");
 
 		function validar($formulario) {
 			if (strlen($formulario["NOMBRE"])==0){
@@ -58,11 +57,8 @@
 			if (strlen($formulario["TELEFONO"])==0){
 				$errores[] = "El teléfono no puede estar vacío";
 			}
-			if (strlen($formulario["NUMEROCUENTA"])==0 and $formulario["TIPOCLIENTE"]=="EMPRESA"){
-				$errores[] = "El número de cuenta bancaria no puede estar vacío si el cliente es una empresa";
-			}
-			if (strlen($formulario["EDAD"])==0){
-				$errores[] = "La edad no puede estar vacía";
+			if (strlen($formulario["NUMERODECUENTA"])==0 and $formulario["TIPOUSUARIO"]=="EMPRESA"){
+				$errores[] = "El número de cuenta bancaria no puede estar vacío si el usuario es una empresa";
 			}
 			if (!(preg_match("/^[[:digit:]]+$/", $formulario["CODIGOPOSTAL"]) and strlen($formulario["CODIGOPOSTAL"])==5)){
 				$errores[] = "El código postal debe estar formado 5 dígitos";
@@ -70,11 +66,8 @@
 			if (!(preg_match("/^[[:digit:]]+$/", $formulario["TELEFONO"]) and strlen($formulario["TELEFONO"])==9)){
 				$errores[] = "El teléfono debe estar formado por 9 dígitos";
 			}
-			if (!(preg_match("/^[[:digit:]]+$/", $formulario["NUMEROCUENTA"]) and strlen($formulario["NUMEROCUENTA"])==22) and strlen($formulario["NUMEROCUENTA"])!=0){
+			if (!(preg_match("/^[[:digit:]]+$/", $formulario["NUMERODECUENTA"]) and strlen($formulario["NUMERODECUENTA"])==22) and strlen($formulario["NUMERODECUENTA"])!=0){
 				$errores[] = "El número de cuenta bancario debe estar formado 22 dígitos";
-			}
-			if (!(preg_match("/^[[:digit:]]+$/", $formulario["EDAD"]) or strlen($formulario["EDAD"])>1) or (intVal($formulario["EDAD"])<18)){
-				$errores[] = "La edad debe estar formada únicamente por números y debe ser mayor de edad (+18 años)";
 			}
 			if(!validar_dni($formulario["DNI"])){
 				$errores[] = "El D.N.I es inválido";
