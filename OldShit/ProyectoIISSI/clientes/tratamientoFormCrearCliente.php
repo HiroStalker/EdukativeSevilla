@@ -22,7 +22,7 @@
 			$formulario["VISITAS"]=0;
 			$formulario["NUMEROCUENTA"]=$_REQUEST["numerocuenta"];
 			$formulario["NUMEROIMPAGOS"]=0;
-			$formulario["TIPOusuario"]=$_REQUEST["tipousuario"];
+			$formulario["TIPOCLIENTE"]=$_REQUEST["tipocliente"];
 			$formulario["EDAD"]=$_REQUEST["edad"];
 			$_SESSION["formulariousuario"]=$formulario;
 			$errores = validar($formulario);
