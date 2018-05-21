@@ -12,7 +12,7 @@
 	$conexion = crearConexionBD();
 		
 	$error = modificarusuario($conexion,$usuario["U_ID"],$usuario["NOMBRE"],$usuario["APELLIDOS"],$usuario["DNI"],$usuario["DIRECCION"],$usuario["POBLACION"],$usuario["NUMERODECUENTA"],$usuario["CODIGOPOSTAL"],
-				$usuario["TELEFONO"],,$usuario["NUMERODEIMPAGOS"],$usuario["TIPOusuario"],$usuario["MOROSIDAD"]);
+				$usuario["TELEFONO"],$usuario["NUMERODEIMPAGOS"],$usuario["TIPOusuario"],$usuario["MOROSIDAD"]);
 	if ($error<>"") {
 		$_SESSION["error"] = $error;
 		$_SESSION["destino"] = "usuarios/usuarios.php";

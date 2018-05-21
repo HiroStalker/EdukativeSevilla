@@ -17,7 +17,7 @@
 		}else{
 			$formulario=$_SESSION["formulariousuario"];
 		}
-?>f
+?>
 <html>
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -86,7 +86,7 @@
 	</form>
 	</div>
 	<div id="volver">
-		<form method="post" action="../usuarios/usuarios.php">
+		<form method="post" action="../usuarios/Usuarios.php">
 			<button id='volver' name='volver' type='submit' class='crear'>Volver</button>
 		</form>
 	</div>

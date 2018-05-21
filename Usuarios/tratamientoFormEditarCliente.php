@@ -55,7 +55,7 @@
 				$errores[] = "La dirección no puede estar vacía";
 			}
 			if (strlen($formulario["POBLACION"])==0){
-				$errores[] = "El población no puede estar vacía";
+				$errores[] = "La población no puede estar vacía";
 			}
 			if (strlen($formulario["CODIGOPOSTAL"])==0){
 				$errores[] = "El código postal no puede estar vacío";
@@ -63,23 +63,8 @@
 			if (strlen($formulario["TELEFONO"])==0){
 				$errores[] = "El teléfono no puede estar vacío";
 			}
-			if (strlen($formulario["NUMEROCUENTA"])==0 and $formulario["TIPOusuario"]=="EMPRESA"){
-				$errores[] = "El número de cuenta bancario no puede estar vacío si el usuario es una empresa";
-			}
-			if (strlen($formulario["EDAD"])==0){
-				$errores[] = "La edad no puede estar vacía";
-			}
-    	 	if (strlen($formulario["VISITAS"])==0){
-				$errores[] = "Las visitas no pueden estar vacías";
-			}
-      		if (!(preg_match("/^[[:digit:]]+$/", $formulario["VISITAS"]))){
-				$errores[] = "Las visitas deben estar formadas por dígitos";
-			}
-      		if (strlen($formulario["NUMEROIMPAGOS"])==0){
-				$errores[] = "El número de impagos no puede estar vacío";
-			}
-      		if (!(preg_match("/^[[:digit:]]+$/", $formulario["NUMEROIMPAGOS"]))){
-				$errores[] = "El número de impagos debe estar formado por dígitos";
+			if (strlen($formulario["NUMERODECUENTA"])==0 and $formulario["TIPOUSUARIO"]=="EMPRESA"){
+				$errores[] = "El número de cuenta bancaria no puede estar vacío si el usuario es una empresa";
 			}
 			if (!(preg_match("/^[[:digit:]]+$/", $formulario["CODIGOPOSTAL"]) and strlen($formulario["CODIGOPOSTAL"])==5)){
 				$errores[] = "El código postal debe estar formado 5 dígitos";
@@ -87,11 +72,8 @@
 			if (!(preg_match("/^[[:digit:]]+$/", $formulario["TELEFONO"]) and strlen($formulario["TELEFONO"])==9)){
 				$errores[] = "El teléfono debe estar formado por 9 dígitos";
 			}
-			if (!(preg_match("/^[[:digit:]]+$/", $formulario["NUMEROCUENTA"]) and strlen($formulario["NUMEROCUENTA"])==22) and strlen($formulario["NUMEROCUENTA"])!=0){
+			if (!(preg_match("/^[[:digit:]]+$/", $formulario["NUMERODECUENTA"]) and strlen($formulario["NUMERODECUENTA"])==22) and strlen($formulario["NUMERODECUENTA"])!=0){
 				$errores[] = "El número de cuenta bancario debe estar formado 22 dígitos";
-			}
-			if (!(preg_match("/^[[:digit:]]+$/", $formulario["EDAD"]) or strlen($formulario["EDAD"])>1) or (intVal($formulario["EDAD"])<18)){
-				$errores[] = "La edad debe estar formada únicamente por números y debe ser mayor de edad (+18 años)";
 			}
 			if(!validar_dni($formulario["DNI"])){
 				$errores[] = "El D.N.I es inválido";
