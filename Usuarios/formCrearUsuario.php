@@ -11,7 +11,7 @@
 			$formulario["CODIGOPOSTAL"]="";
 			$formulario["TELEFONO"]="";
 			$formulario["NUMERODEIMPAGOS"]="";
-			$formulario["TIPOusuario"]="PARTICULAR";
+			$formulario["TIPOUSUARIO"]="PARTICULAR";
 
 			$_SESSION["formulariousuario"] = $formulario;
 		}else{
@@ -92,7 +92,7 @@
 		</form>
 	</div>
 <?php
-	include_once("../compartida/pie.php");
+	include_once("../Compartida/pie.php");
 ?>
 </body>
 </html>

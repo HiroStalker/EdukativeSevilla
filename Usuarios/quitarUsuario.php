@@ -2,7 +2,7 @@
 	session_start();	
 		
 	require_once("../compartida/gestionarBD.php");
-	require_once("../compartida/gestionarusuarios.php");
+	require_once("../compartida/gestionarUsuarios.php");
 		
 	if (isset($_SESSION["usuario"])) {
 		$usuario = $_SESSION["usuario"];
@@ -12,7 +12,7 @@
 		
 	$conexion = crearConexionBD();
 	
-	$error = quitarusuario($conexion,$usuario["C_ID"]);
+	$error = quitarusuario($conexion,$usuario["U_ID"]);
 	if ($error<>"") {
 		$_SESSION["error"] = $error;
 		$_SESSION["destino"] = "Usuarios/Usuarios.php";

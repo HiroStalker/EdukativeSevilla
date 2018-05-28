@@ -3,7 +3,7 @@
 session_start();
 
 require_once("../compartida/gestionarBD.php");
-require_once("../compartida/gestionaUsuarios.php");
+require_once("../compartida/gestionarUsuarios.php");
 
 if (isset ($_SESSION["formulariousuario"])){
 	$formulario = $_SESSION["formulariousuario"];

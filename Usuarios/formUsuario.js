@@ -96,6 +96,7 @@ function validarNombre(error,nombre){
 	}
 	return error;
 }
+
 function validarApellidos(error, apellidos){
 	if(apellidos==""){
 		error=error+"Los apellidos no pueden estar vacíos";
@@ -194,7 +195,7 @@ function validar_telefono(telefono){
 		}
 	}
 }
-function validarNumeroDECuenta(error, numerodecuenta, tipousuario){
+function validarNumeroDeCuenta(error, numerodecuenta, tipousuario){
 	if(numerodecuenta=="" && tipousuario=="EMPRESA"){
 		error=error+"El número de cuenta bancaria no puede estar vacío si el usuario es una empresa";
 	}

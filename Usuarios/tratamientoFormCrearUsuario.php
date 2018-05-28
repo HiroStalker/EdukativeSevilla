@@ -4,11 +4,11 @@
   <head>
   	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>Tratamiento de errores</title>
-    <link rel="stylesheet" type="text/css"  href="../estilo_formulario.css" />
+    <link rel="stylesheet" type="text/css"  href="../style/estilo_formulario.css" />
   </head>
   <body>
 
-  	<?php
+  	<script language="php">
 		session_start();
 		if (isset($_SESSION["formulariousuario"]) ){
 			$formulario["NOMBRE"]=$_REQUEST["nombre"];
@@ -21,18 +21,17 @@
 			$formulario["TELEFONO"]=$_REQUEST["telefono"];
 			$formulario["NUMERODEIMPAGOS"]=0;
 			$formulario["TIPOUSUARIO"]=$_REQUEST["tipousuario"];
-			$formulario["MOROSIDAD"]=0;
-
 			$_SESSION["formulariousuario"]=$formulario;
+			
 			$errores = validar($formulario);
-			/*if ( count ($errores) > 0 ) {
+			if (count($errores) > 0) {
 				foreach($errores as $error){
 					$_SESSION["error"] = $error . "<br>" . $_SESSION["error"] ;
 				}
 				$_SESSION["destino"] = "Usuarios/formCrearUsuario.php";
 				Header("Location:../error.php");
 			}else
-				Header("Location:../Usuarios/insertarUsuario.php");*/
+				Header("Location:../Usuarios/insertarUsuario.php");
 		}else Header("Location:../Usuarios/formCrearUsuario.php");
 
 		function validar($formulario) {
@@ -84,6 +83,6 @@
 				return FALSE;
 			}
 		}
-  	?>
+  	</script>
   </body>
 </html>

@@ -6,7 +6,7 @@
 	else{
 		$usuario["editarusuario"]=FALSE;
 
-		$usuario["C_ID"] = $_REQUEST["C_ID"];
+		$usuario["U_ID"] = $_REQUEST["U_ID"];
 		$usuario["NOMBRE"] = $_REQUEST["NOMBRE"];
 		$usuario["APELLIDOS"] = $_REQUEST["APELLIDOS"];
 		$usuario["DNI"] = $_REQUEST["DNI"];
@@ -16,7 +16,7 @@
 		$usuario["CODIGOPOSTAL"] = $_REQUEST["CODIGOPOSTAL"];
 		$usuario["TELEFONO"] = $_REQUEST["TELEFONO"];	
 		$usuario["NUMERODEIMPAGOS"] = $_REQUEST["NUMERODEIMPAGOS"];
-		$usuario["TIPOusuario"] = $_REQUEST["TIPOusuario"];
+		$usuario["TIPOUSUARIO"] = $_REQUEST["TIPOUSUARIO"];
 		$usuario["MOROSIDAD"] = (int)$_REQUEST["MOROSIDAD"];
 
 		if (isset($_REQUEST["editarusuario"])){
@@ -25,7 +25,7 @@
 			/*Header("Location:../vehiculos/vehiculos.php");*/
 		}else if (isset($_REQUEST["quitarusuario"])){
 			$_SESSION["usuario"]= $usuario;
-			Header("Location:../usuarios/quitarusuario.php");
+			Header("Location:../usuarios/quitarUsuario.php");
 		}else if (isset($_REQUEST["grabarusuario"])){
 			$_SESSION["usuario"]= $usuario;
 			Header("Location:../Usuarios/tratamientoFormEditarUsuario.php");

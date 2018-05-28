@@ -1,4 +1,5 @@
-<?php
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<script language="php">
 session_start();
 
 require_once ("../compartida/gestionarBD.php");
@@ -7,7 +8,7 @@ require_once ("../compartida/gestionarUsuarios.php");
 $conexion = crearConexionBD();
 
 if (isset($_SESSION["usuario"]))
-	$cliente = $_SESSION["usuario"];
+	$usuario = $_SESSION["usuario"];
 unset($_SESSION["usuario"]);
 
 if (isset($_SESSION["paginausuario"]))
@@ -30,13 +31,12 @@ if (isset($_GET["page_size"])) {
 	$page_size = 10;
 }
 
-if ($page_num < 1)
-	$page_num = 1;
-if ($page_size < 1)
-	$page_size = 10;
+if ($page_num < 1) $page_num = 1;
+if ($page_size < 1) $page_size = 10;
 
 $total = numeroUsuario($conexion);
 $total_pages = ($total / $page_size);
+
 if ($total % $page_size > 0)
 	$total_pages++;
 if ($page_num > $total_pages)
@@ -46,13 +46,13 @@ $pagina["PAGINA"] = $page_num;
 $pagina["INTERVALO"] = $page_size;
 $pagina["TOTAL"] = $total;
 $_SESSION["paginausuario"] = $pagina;
-?>
+</script>
 
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+
 <html>
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF8">
-		<title>Gestión de Clientes</title>
+		<title>Gestión de Usuarios</title>
 		<link type="text/css" rel="stylesheet" href="../style/biblio.css">  
 	</head>
 <body>
