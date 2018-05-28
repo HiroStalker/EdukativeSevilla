@@ -8,7 +8,7 @@
   </head>
   <body>
 
-  	<script language="php">
+  	<?php
 		session_start();
 		if (isset($_SESSION["formulariousuario"]) ){
 			$formulario["NOMBRE"]=$_REQUEST["nombre"];
@@ -83,6 +83,6 @@
 				return FALSE;
 			}
 		}
-  	</script>
+  	?>
   </body>
 </html>
