@@ -12,7 +12,7 @@ if (isset ($_SESSION["formulariousuario"])){
 
 $conexion = crearConexionBD();
 
-$error=meterUsuario($conexion, $formulario["NOMBRE"], $formulario["APELLIDOS"], $formulario["DNI"], $formulario["DIRECCION"], $formulario["POBLACION"], $formulario["NUMERODECUENTA"], $formulario["CODIGOPOSTAL"], $formulario["TELEFONO"],  $formulario["NUMERODEIMPAGOS"], $formulario["TIPOusuario"], $formulario["MOROSIDAD"]);
+$error=meterUsuario($conexion, $formulario["NOMBRE"], $formulario["APELLIDOS"], $formulario["DNI"], $formulario["DIRECCION"], $formulario["POBLACION"], $formulario["NUMERODECUENTA"], $formulario["CODIGOPOSTAL"], $formulario["TELEFONO"],  $formulario["NUMERODEIMPAGOS"], $formulario["TIPOUSUARIO"], $formulario["MOROSIDAD"]);
 if ($error<>"") {
 	$_SESSION["error"] = $error;
 	$_SESSION["destino"] = "Usuarios/formCrearUsuario.php";

@@ -25,15 +25,15 @@
 
 			$_SESSION["formulariousuario"]=$formulario;
 			$errores = validar($formulario);
-			if ( count ($errores) > 0 ) {
+			/*if ( count ($errores) > 0 ) {
 				foreach($errores as $error){
 					$_SESSION["error"] = $error . "<br>" . $_SESSION["error"] ;
 				}
-				$_SESSION["destino"] = "usuarios/formCrearusuario.php";
+				$_SESSION["destino"] = "Usuarios/formCrearUsuario.php";
 				Header("Location:../error.php");
 			}else
-				Header("Location:../usuarios/insertarusuario.php");
-		}else Header("Location:../usuarios/formCrearusuario.php");
+				Header("Location:../Usuarios/insertarUsuario.php");*/
+		}else Header("Location:../Usuarios/formCrearUsuario.php");
 
 		function validar($formulario) {
 			if (strlen($formulario["NOMBRE"])==0){

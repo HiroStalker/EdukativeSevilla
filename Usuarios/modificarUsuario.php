@@ -2,7 +2,7 @@
 	session_start();	
 	
 	require_once("../compartida/gestionarBD.php");
-	require_once("../compartida/gestionarusuarios.php");
+	require_once("../compartida/gestionarUsuarios.php");
 		
 	if (isset($_SESSION["usuario"]) ){
 		$usuario = $_SESSION["usuario"];
@@ -15,7 +15,7 @@
 				$usuario["TELEFONO"],$usuario["NUMERODEIMPAGOS"],$usuario["TIPOusuario"],$usuario["MOROSIDAD"]);
 	if ($error<>"") {
 		$_SESSION["error"] = $error;
-		$_SESSION["destino"] = "usuarios/usuarios.php";
+		$_SESSION["destino"] = "Usuarios/Usuarios.php";
 		Header("Location:../error.php"); }
 	else{
 		/*

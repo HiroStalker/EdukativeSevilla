@@ -15,7 +15,7 @@
 	$error = quitarusuario($conexion,$usuario["C_ID"]);
 	if ($error<>"") {
 		$_SESSION["error"] = $error;
-		$_SESSION["destino"] = "usuarios/usuarios.php";
+		$_SESSION["destino"] = "Usuarios/Usuarios.php";
 		Header("Location:../error.php"); }
 	else{
 		if(isset($_SESSION["paginausuario"])){
@@ -24,7 +24,7 @@
 				$pagina["PAGINA"]=(int)$pagina["PAGINA"]-1;
 				$_SESSION["paginausuario"]=$pagina;
 			}
-			Header("Location:../usuarios/usuarios.php");
+			Header("Location:../Usuarios/Usuarios.php");
 		}	
 	}
 	cerrarConexionBD($conexion);

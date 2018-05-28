@@ -35,7 +35,7 @@
 				$_SESSION["U_ID"]= $formulario["U_ID"];
 				Header("Location:../error.php");
 			}else{
-				Header("Location:../usuarios/modificarusuario.php");
+				Header("Location:../Usuarios/modificarUsuario.php");
 			}
 		}/*else {
 			$_SESSION["U_ID"]=$formulario["U_ID"];

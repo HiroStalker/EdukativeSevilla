@@ -28,7 +28,7 @@
 			Header("Location:../usuarios/quitarusuario.php");
 		}else if (isset($_REQUEST["grabarusuario"])){
 			$_SESSION["usuario"]= $usuario;
-			Header("Location:../usuarios/tratamientoFormEditarusuario.php");
+			Header("Location:../Usuarios/tratamientoFormEditarUsuario.php");
 		}/*else if (isset($_REQUEST["ver_vehiculos"])){
 			$_SESSION["usuario"] = $usuario;
 			Header("Location:../vehiculos/vehiculos.php");

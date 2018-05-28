@@ -33,7 +33,7 @@
 		<h3>Creación de un Usuario</h3>
 	</div>
 	<div id="div_form">
-	<form form name="formCrearUsuario" enctype="multipart/form-data" action="../usuarios/tratamientoFormCrearUsuario.php" onsubmit="return procesarUsuario()" method="post" >
+	<form form name="formCrearUsuario" enctype="multipart/form-data" action="../Usuarios/tratamientoFormCrearUsuario.php" onsubmit="return procesarUsuario()" method="post" >
 		<div id="div_nombre">
 			<label for="nombre" id="label_nombre">Nombre:</label>
 			<input id="nombre" name="nombre" type="text" onchange="procesarUsuario()" value="" size="20"></input>
@@ -82,11 +82,12 @@
 			</select>
 			<div id="errorestipousuarioUsuario"></div>
 		</div>
+		<input type="submit" value="Crear"></input>
 
 	</form>
 	</div>
 	<div id="volver">
-		<form method="post" action="../usuarios/Usuarios.php">
+		<form method="post" action="../Usuarios/Usuarios.php">
 			<button id='volver' name='volver' type='submit' class='crear'>Volver</button>
 		</form>
 	</div>

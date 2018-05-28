@@ -108,7 +108,7 @@ include_once ("../compartida/cabecera.php");
 		<table id="tabla_paginacion">
 			<tr>
 				<td>
-					<form method="get" action="../usuarios/usuarios.php">
+					<form method="get" action="../Usuarios/Usuarios.php">
 					<?php
 						for( $page = 1; $page <= $total_pages; $page++ ) {
 							if ( $page == $page_num ) {
